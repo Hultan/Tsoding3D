@@ -1,6 +1,9 @@
 package main
 
 // Model taken from https://github.com/MaX-Kawula/penger-obj
+
+var PengerZoom = Vector3{0, 0, 0}
+
 var PengerVertices = []Vector3{
 	{X: -0.086914, Y: 0.277547, Z: 0.400041},
 	{X: -0.069555, Y: 0.329698, Z: 0.376422},

@@ -35,7 +35,7 @@ type Vector3 struct {
 }
 
 func (p Vector3) TranslateZ(dz float32) Vector3 {
-	return Vector3{p.X, p.Y, p.Z + zoom + dz}
+	return Vector3{p.X + zoom.X, p.Y + zoom.Y, p.Z + zoom.Z + dz}
 }
 
 func (p Vector3) RotateXY(angle float32) Vector3 {

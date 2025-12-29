@@ -34,11 +34,11 @@ var (
 	facesColor              = rl.Green
 	delta           float32 = 1
 	angle           float32
-	currentModel            = modelCube
-	currentViewMode         = viewModeBoth
-	vertices                = CubeVertices
-	faces                   = CubeFaces
-	zoom            float32 = 0
+	currentModel    = modelCube
+	currentViewMode = viewModeBoth
+	vertices        = CubeVertices
+	faces           = CubeFaces
+	zoom            Vector3
 )
 
 func main() {
@@ -92,15 +92,15 @@ func handleKeyboard() {
 		case 0:
 			vertices = CubeVertices
 			faces = CubeFaces
-			zoom = 0
+			zoom = CubeZoom
 		case 1:
 			vertices = PengerVertices
 			faces = PengerFaces
-			zoom = 0
+			zoom = PengerZoom
 		case 2:
 			vertices = TeapotVertices
 			faces = TeapotFaces
-			zoom = 3
+			zoom = TeapotZoom
 		}
 	}
 }

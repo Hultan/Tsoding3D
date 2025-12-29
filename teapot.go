@@ -1,5 +1,7 @@
 package main
 
+var TeapotZoom = Vector3{0, -1, 4}
+
 var TeapotVertices = []Vector3{
 	{0.605903, 0.005903, -0},
 	{0, 0, 0},

@@ -1,6 +1,8 @@
 package main
 
 var (
+	CubeZoom = Vector3{0, 0, 0}
+
 	CubeVertices = []Vector3{
 		{0.25, 0.25, 0.25},
 		{-0.25, 0.25, 0.25},
