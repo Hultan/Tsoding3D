@@ -9,6 +9,7 @@ import (
 const (
 	modelCube = iota
 	modelPenger
+	modelTeapot
 	modelLength
 )
 
@@ -33,10 +34,11 @@ var (
 	facesColor              = rl.Green
 	delta           float32 = 1
 	angle           float32
-	currentModel    = modelCube
-	currentViewMode = viewModeBoth
-	vertices        = CubeVertices
-	faces           = CubeFaces
+	currentModel            = modelCube
+	currentViewMode         = viewModeBoth
+	vertices                = CubeVertices
+	faces                   = CubeFaces
+	zoom            float32 = 0
 )
 
 func main() {
@@ -72,7 +74,7 @@ func main() {
 		}
 
 		rl.DrawText("V - [V]iew mode - Switch between vertices/faces/both", 10, 10, 20, rl.Blue)
-		rl.DrawText("M - [M]odel - Switch between cube/penger model", 10, 30, 20, rl.Blue)
+		rl.DrawText("M - [M]odel - Switch between cube/penger/teapot model", 10, 30, 20, rl.Blue)
 
 		rl.EndDrawing()
 	}
@@ -86,12 +88,19 @@ func handleKeyboard() {
 	}
 	if rl.IsKeyPressed(rl.KeyM) {
 		currentModel = (currentModel + 1) % modelLength
-		if currentModel == 0 {
+		switch currentModel {
+		case 0:
 			vertices = CubeVertices
 			faces = CubeFaces
-		} else {
+			zoom = 0
+		case 1:
 			vertices = PengerVertices
 			faces = PengerFaces
+			zoom = 0
+		case 2:
+			vertices = TeapotVertices
+			faces = TeapotFaces
+			zoom = 3
 		}
 	}
 }
