@@ -29,7 +29,8 @@ const (
 
 var (
 	backgroundColor         = rl.Black
-	foregroundColor         = rl.Green
+	verticesColor           = rl.Red
+	facesColor              = rl.Green
 	delta           float32 = 1
 	angle           float32
 	currentModel    = modelCube

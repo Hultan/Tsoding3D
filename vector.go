@@ -11,11 +11,11 @@ type Vector2 struct {
 }
 
 func (p Vector2) Point() {
-	rl.DrawRectangle(int32(p.X)-vertexSize/2, int32(p.Y)-vertexSize/2, vertexSize, vertexSize, foregroundColor)
+	rl.DrawRectangle(int32(p.X)-vertexSize/2, int32(p.Y)-vertexSize/2, vertexSize, vertexSize, verticesColor)
 }
 
 func (p Vector2) Line(p2 Vector2) {
-	rl.DrawLineEx(p.ToRaylib(), p2.ToRaylib(), lineThickness, foregroundColor)
+	rl.DrawLineEx(p.ToRaylib(), p2.ToRaylib(), lineThickness, facesColor)
 }
 
 func (p Vector2) Screen() Vector2 {
